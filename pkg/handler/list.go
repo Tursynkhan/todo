@@ -7,6 +7,19 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/tursynkhan/todo-app"
 )
+//@Summary Create todo list
+//@Security ApiKeyAuth
+//@Tags lists
+//@Description create todo list
+//@ID create-list
+//@Accept json
+//@Produce json
+//@Param input body todo.Todolist true "list info"
+//@Success 200 {string} integer 1
+//@Failure 400,404 {object} errorResponse
+//@Failure 500 {object} errorResponse
+//@Failure default {object} errorResponse
+//@Router /auth/lists [post]
 
 func (h *Handler) createList(c *gin.Context) {
 	userId, err := getUserId(c)
